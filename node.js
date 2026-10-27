@@ -172,3 +172,9 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     errorResponse(res, 'Terjadi kesalahan pada server', 500, err.message);
 });
+
+// Middleware untuk menambahkan timestamp ke request
+app.use((req, res, next) => {
+    req.requestTime = new Date().toISOString();
+    next();
+});
