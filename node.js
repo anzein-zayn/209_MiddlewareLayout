@@ -167,3 +167,8 @@ app.use((err, req, res, next) =>{
 app.listen(port, ()=> {
     console.log(`App running on port ${port}.`)
 })
+// Middleware Error Handling Global
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    errorResponse(res, 'Terjadi kesalahan pada server', 500, err.message);
+});
