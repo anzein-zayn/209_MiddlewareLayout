@@ -1,3 +1,11 @@
+
+/**
+ * @typedef {Object} Biodata
+ * @property {number} id
+ * @property {string} nama
+ * @property {string} nim
+ * @property {string} kelas
+ */
 import "dotenv/config";
 import express from 'express';
 import pg from "pg";
