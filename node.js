@@ -178,3 +178,6 @@ app.use((req, res, next) => {
     req.requestTime = new Date().toISOString();
     next();
 });
+
+// Middleware keamanan sederhana (X-Powered-By removal)
+app.disable('x-powered-by');
